@@ -768,17 +768,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#intervention_grammar.approaches.MidProsthesis" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;MidProsthesis
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#intervention_grammar.approaches.Replacement" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1242,17 +1231,6 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#intervention_grammar.approaches.MidProsthesis" class="md-nav__link">
-    <span class="md-ellipsis">
-      
-        <code class="doc-symbol doc-symbol-toc doc-symbol-class"></code>&nbsp;MidProsthesis
-      
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
   <a href="#intervention_grammar.approaches.Replacement" class="md-nav__link">
     <span class="md-ellipsis">
       
@@ -1436,14 +1414,7 @@ takes them from its <code>zone</code> parameter.</p>
           <b><code><a class="autorefs autorefs-internal" title="            Prosthesis (intervention_grammar.approaches.Prosthesis)" href="#intervention_grammar.approaches.Prosthesis">Prosthesis</a></code></b>
           –
           <div class="doc-md-description">
-            <p>Replace a member over its full section along a length at one end.</p>
-          </div>
-        </li>
-        <li class="doc-section-item field-body">
-          <b><code><a class="autorefs autorefs-internal" title="            MidProsthesis (intervention_grammar.approaches.MidProsthesis)" href="#intervention_grammar.approaches.MidProsthesis">MidProsthesis</a></code></b>
-          –
-          <div class="doc-md-description">
-            <p>Replace a member over its full section along a length in its middle.</p>
+            <p>Replace a member over its full section along a span.</p>
           </div>
         </li>
         <li class="doc-section-item field-body">
@@ -1613,17 +1584,17 @@ takes them from its <code>zone</code> parameter.</p>
 
                   <details class="mkdocstrings-source">
                     <summary>Source code in <code>src/intervention_grammar/approaches.py</code></summary>
-                    <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#intervention_grammar.approaches.Patch--source--__codelineno-0-154">154</a></span>
+                    <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#intervention_grammar.approaches.Patch--source--__codelineno-0-153">153</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Patch--source--__codelineno-0-154">154</a></span>
 <span class="normal"><a href="#intervention_grammar.approaches.Patch--source--__codelineno-0-155">155</a></span>
 <span class="normal"><a href="#intervention_grammar.approaches.Patch--source--__codelineno-0-156">156</a></span>
 <span class="normal"><a href="#intervention_grammar.approaches.Patch--source--__codelineno-0-157">157</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Patch--source--__codelineno-0-158">158</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Patch--source--__codelineno-0-159">159</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="intervention_grammar.approaches.Patch--source--__codelineno-0-154" name="intervention_grammar.approaches.Patch--source--__codelineno-0-154"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">member</span><span class="p">,</span> <span class="n">region</span><span class="p">,</span> <span class="n">piece</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">joint</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<a id="intervention_grammar.approaches.Patch--source--__codelineno-0-155" name="intervention_grammar.approaches.Patch--source--__codelineno-0-155"></a>    <span class="nb">super</span><span class="p">(</span><span class="n">Patch</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-<a id="intervention_grammar.approaches.Patch--source--__codelineno-0-156" name="intervention_grammar.approaches.Patch--source--__codelineno-0-156"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">member</span> <span class="o">=</span> <span class="n">member</span>
-<a id="intervention_grammar.approaches.Patch--source--__codelineno-0-157" name="intervention_grammar.approaches.Patch--source--__codelineno-0-157"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">region</span> <span class="o">=</span> <span class="n">region</span>
-<a id="intervention_grammar.approaches.Patch--source--__codelineno-0-158" name="intervention_grammar.approaches.Patch--source--__codelineno-0-158"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">piece</span> <span class="o">=</span> <span class="n">piece</span> <span class="ow">or</span> <span class="n">member</span> <span class="o">+</span> <span class="s2">".patch"</span>
-<a id="intervention_grammar.approaches.Patch--source--__codelineno-0-159" name="intervention_grammar.approaches.Patch--source--__codelineno-0-159"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">joint</span> <span class="o">=</span> <span class="n">joint</span>
+<span class="normal"><a href="#intervention_grammar.approaches.Patch--source--__codelineno-0-158">158</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="intervention_grammar.approaches.Patch--source--__codelineno-0-153" name="intervention_grammar.approaches.Patch--source--__codelineno-0-153"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">member</span><span class="p">,</span> <span class="n">region</span><span class="p">,</span> <span class="n">piece</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">joint</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<a id="intervention_grammar.approaches.Patch--source--__codelineno-0-154" name="intervention_grammar.approaches.Patch--source--__codelineno-0-154"></a>    <span class="nb">super</span><span class="p">(</span><span class="n">Patch</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+<a id="intervention_grammar.approaches.Patch--source--__codelineno-0-155" name="intervention_grammar.approaches.Patch--source--__codelineno-0-155"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">member</span> <span class="o">=</span> <span class="n">member</span>
+<a id="intervention_grammar.approaches.Patch--source--__codelineno-0-156" name="intervention_grammar.approaches.Patch--source--__codelineno-0-156"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">region</span> <span class="o">=</span> <span class="n">region</span>
+<a id="intervention_grammar.approaches.Patch--source--__codelineno-0-157" name="intervention_grammar.approaches.Patch--source--__codelineno-0-157"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">piece</span> <span class="o">=</span> <span class="n">piece</span> <span class="ow">or</span> <span class="n">member</span> <span class="o">+</span> <span class="s2">".patch"</span>
+<a id="intervention_grammar.approaches.Patch--source--__codelineno-0-158" name="intervention_grammar.approaches.Patch--source--__codelineno-0-158"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">joint</span> <span class="o">=</span> <span class="n">joint</span>
 </code></pre></div></td></tr></table></div>
                   </details>
 
@@ -1658,150 +1629,7 @@ takes them from its <code>zone</code> parameter.</p>
 
 <a href="#intervention_grammar.approaches.Prosthesis" class="headerlink" title="Permanent link">¤</a></h3>
 <div class="language-python doc-signature highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">Prosthesis</span><span class="p">(</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="n">member</span><span class="p">,</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>    <span class="n">length</span><span class="p">,</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    <span class="n">end</span><span class="o">=</span><span class="s2">"start"</span><span class="p">,</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>    <span class="n">joint</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>    <span class="n">zone</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    <span class="n">path</span><span class="o">=</span><span class="s2">"straight"</span><span class="p">,</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="p">)</span>
-</code></pre></div>
-
-    <div class="doc doc-contents ">
-            <p class="doc doc-class-bases">
-              Bases: <code><a class="autorefs autorefs-internal" title="            Approach (intervention_grammar.operation.Approach)" href="../intervention_grammar.operation/#intervention_grammar.operation.Approach">Approach</a></code></p>
-
-
-
-        <p>Replace a member over its full section along a length at one end.</p>
-<p>Prosthesis = Release(connections in the zone) ; Split(m, s, J) ; Remove(old end) ;
-Add(piece) ; Insert(piece) ; Seat ; Join(J) ; Join(connections of the zone) ;
-Secure. The rest of the member keeps its name; the old end becomes
-<code>member.old</code> and the new piece <code>member.new</code>. Where the old end rested on
-a neighbour, the member now rests on the new piece.</p>
-
-
-<p><span class="doc-section-title">Parameters:</span></p>
-    <ul>
-        <li class="doc-section-item field-body">
-            <b><code>member</code></b>
-              (<code><a class="autorefs autorefs-external" href="https://docs.python.org/3/builtins/stdtypes.html#str">str</a></code>)
-          –
-          <div class="doc-md-description">
-            <p>The member whose end is replaced.</p>
-          </div>
-        </li>
-        <li class="doc-section-item field-body">
-            <b><code>length</code></b>
-              (<code><a class="autorefs autorefs-external" href="https://docs.python.org/3/builtins/functions.html#float">float</a></code>)
-          –
-          <div class="doc-md-description">
-            <p>How far the new piece reaches, measured from the end.</p>
-          </div>
-        </li>
-        <li class="doc-section-item field-body">
-            <b><code>end</code></b>
-              (<code><a class="autorefs autorefs-external" href="https://docs.python.org/3/builtins/stdtypes.html#str">str</a></code>, default:
-                  <code>&#39;start&#39;</code>
-)
-          –
-          <div class="doc-md-description">
-            <p>"start" (default) or "end".</p>
-          </div>
-        </li>
-        <li class="doc-section-item field-body">
-            <b><code>joint</code></b>
-              (<code><a class="autorefs autorefs-external" href="https://docs.python.org/3/builtins/stdtypes.html#dict">dict</a></code>, default:
-                  <code>None</code>
-)
-          –
-          <div class="doc-md-description">
-            <p>The joint between the remaining member and the new piece.</p>
-          </div>
-        </li>
-        <li class="doc-section-item field-body">
-            <b><code>zone</code></b>
-              (<code><a class="autorefs autorefs-external" href="https://docs.python.org/3/builtins/stdtypes.html#list">list</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/builtins/stdtypes.html#str">str</a>]</code>, default:
-                  <code>None</code>
-)
-          –
-          <div class="doc-md-description">
-            <p>Neighbours connected within the replaced length, where stations are not known.</p>
-          </div>
-        </li>
-        <li class="doc-section-item field-body">
-            <b><code>path</code></b>
-              (<code><a class="autorefs autorefs-external" href="https://docs.python.org/3/builtins/stdtypes.html#str">str</a></code>, default:
-                  <code>&#39;straight&#39;</code>
-)
-          –
-          <div class="doc-md-description">
-            <p>How the new piece is brought in.</p>
-          </div>
-        </li>
-    </ul>
-
-
-
-
-
-
-
-
-
-
-                  <details class="mkdocstrings-source">
-                    <summary>Source code in <code>src/intervention_grammar/approaches.py</code></summary>
-                    <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#intervention_grammar.approaches.Prosthesis--source--__codelineno-0-199">199</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Prosthesis--source--__codelineno-0-200">200</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Prosthesis--source--__codelineno-0-201">201</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Prosthesis--source--__codelineno-0-202">202</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Prosthesis--source--__codelineno-0-203">203</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Prosthesis--source--__codelineno-0-204">204</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Prosthesis--source--__codelineno-0-205">205</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Prosthesis--source--__codelineno-0-206">206</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="intervention_grammar.approaches.Prosthesis--source--__codelineno-0-199" name="intervention_grammar.approaches.Prosthesis--source--__codelineno-0-199"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">member</span><span class="p">,</span> <span class="n">length</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">"start"</span><span class="p">,</span> <span class="n">joint</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">zone</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s2">"straight"</span><span class="p">):</span>
-<a id="intervention_grammar.approaches.Prosthesis--source--__codelineno-0-200" name="intervention_grammar.approaches.Prosthesis--source--__codelineno-0-200"></a>    <span class="nb">super</span><span class="p">(</span><span class="n">Prosthesis</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-<a id="intervention_grammar.approaches.Prosthesis--source--__codelineno-0-201" name="intervention_grammar.approaches.Prosthesis--source--__codelineno-0-201"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">member</span> <span class="o">=</span> <span class="n">member</span>
-<a id="intervention_grammar.approaches.Prosthesis--source--__codelineno-0-202" name="intervention_grammar.approaches.Prosthesis--source--__codelineno-0-202"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">length</span> <span class="o">=</span> <span class="n">length</span>
-<a id="intervention_grammar.approaches.Prosthesis--source--__codelineno-0-203" name="intervention_grammar.approaches.Prosthesis--source--__codelineno-0-203"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">end</span> <span class="o">=</span> <span class="n">end</span>
-<a id="intervention_grammar.approaches.Prosthesis--source--__codelineno-0-204" name="intervention_grammar.approaches.Prosthesis--source--__codelineno-0-204"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">joint</span> <span class="o">=</span> <span class="n">joint</span>
-<a id="intervention_grammar.approaches.Prosthesis--source--__codelineno-0-205" name="intervention_grammar.approaches.Prosthesis--source--__codelineno-0-205"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">zone</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">zone</span><span class="p">)</span> <span class="k">if</span> <span class="n">zone</span> <span class="k">else</span> <span class="kc">None</span>
-<a id="intervention_grammar.approaches.Prosthesis--source--__codelineno-0-206" name="intervention_grammar.approaches.Prosthesis--source--__codelineno-0-206"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span> <span class="n">path</span>
-</code></pre></div></td></tr></table></div>
-                  </details>
-
-
-
-<div class="doc doc-children">
-
-
-
-
-
-
-
-
-
-
-
-
-  </div>
-
-    </div>
-
-</div>
-
-<div class="doc doc-object doc-class">
-
-
-
-<h3 id="intervention_grammar.approaches.MidProsthesis" class="doc doc-heading">
-<code class="doc-symbol doc-symbol-heading doc-symbol-class"></code>            <span class="doc doc-object-name doc-class-name">MidProsthesis</span>
-
-
-<a href="#intervention_grammar.approaches.MidProsthesis" class="headerlink" title="Permanent link">¤</a></h3>
-<div class="language-python doc-signature highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nf">MidProsthesis</span><span class="p">(</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="n">member</span><span class="p">,</span> <span class="n">span</span><span class="p">,</span> <span class="n">joints</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">zone</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s2">"straight"</span>
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    <span class="n">member</span><span class="p">,</span> <span class="n">span</span><span class="p">,</span> <span class="n">joint</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">zone</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s2">"straight"</span>
 <a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="p">)</span>
 </code></pre></div>
 
@@ -1811,10 +1639,17 @@ a neighbour, the member now rests on the new piece.</p>
 
 
 
-        <p>Replace a member over its full section along a length in its middle.</p>
-<p>MidProsthesis = Release ; Split(m, s1) ; Split(m, s0) ; Remove(segment) ;
-Add ; Insert ; Seat ; Join(J0) ; Join(J1) ; Join(connections of the segment) ;
-Secure. The two remaining pieces are <code>member.a</code> and <code>member.b</code>.</p>
+        <p>Replace a member over its full section along a span.</p>
+<p>Where the span reaches an end of the member, the new piece is joined to the
+rest of the member at one cut; where it lies in the middle, at two cuts.</p>
+<p>Prosthesis = Release(connections in the span) ; Split ; Remove(old piece) ;
+Add(new piece) ; Insert ; Seat ; Join(rest of the member) ;
+Join(connections in the span) ; Secure. In the middle, the member is split
+twice and the new piece is joined to both parts.</p>
+<p>The rest of the member keeps its name; in the middle, the part after the
+span becomes <code>member.b</code>. The old piece becomes <code>member.old</code>, the new one
+<code>member.new</code>. Where the old piece rested on a neighbour, the member now
+rests on the new piece.</p>
 
 
 <p><span class="doc-section-title">Parameters:</span></p>
@@ -1824,7 +1659,7 @@ Secure. The two remaining pieces are <code>member.a</code> and <code>member.b</c
               (<code><a class="autorefs autorefs-external" href="https://docs.python.org/3/builtins/stdtypes.html#str">str</a></code>)
           –
           <div class="doc-md-description">
-            <p>The member whose middle segment is replaced.</p>
+            <p>The member to repair.</p>
           </div>
         </li>
         <li class="doc-section-item field-body">
@@ -1832,17 +1667,19 @@ Secure. The two remaining pieces are <code>member.a</code> and <code>member.b</c
               (<code><a class="autorefs autorefs-external" href="https://docs.python.org/3/builtins/stdtypes.html#list">list</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/builtins/functions.html#float">float</a>]</code>)
           –
           <div class="doc-md-description">
-            <p>Stations s0 and s1 of the replaced segment.</p>
+            <p>Stations of the start and the end of the replaced piece, in metres from
+the start of the member.</p>
           </div>
         </li>
         <li class="doc-section-item field-body">
-            <b><code>joints</code></b>
-              (<code><a class="autorefs autorefs-external" href="https://docs.python.org/3/builtins/stdtypes.html#list">list</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/builtins/stdtypes.html#dict">dict</a>]</code>, default:
+            <b><code>joint</code></b>
+              (<code><a class="autorefs autorefs-external" href="https://docs.python.org/3/builtins/stdtypes.html#dict">dict</a> | <a class="autorefs autorefs-external" href="https://docs.python.org/3/builtins/stdtypes.html#list">list</a>[<a class="autorefs autorefs-external" href="https://docs.python.org/3/builtins/stdtypes.html#dict">dict</a>]</code>, default:
                   <code>None</code>
 )
           –
           <div class="doc-md-description">
-            <p>The joints at s0 and at s1.</p>
+            <p>The joint at the cuts, or one joint per cut: [at the start of the span,
+at its end].</p>
           </div>
         </li>
         <li class="doc-section-item field-body">
@@ -1852,7 +1689,7 @@ Secure. The two remaining pieces are <code>member.a</code> and <code>member.b</c
 )
           –
           <div class="doc-md-description">
-            <p>Neighbours connected within the segment, where stations are not known.</p>
+            <p>Neighbours connected within the span, where stations are not known.</p>
           </div>
         </li>
         <li class="doc-section-item field-body">
@@ -1862,7 +1699,7 @@ Secure. The two remaining pieces are <code>member.a</code> and <code>member.b</c
 )
           –
           <div class="doc-md-description">
-            <p>How the new segment is brought in, see <a class="autorefs autorefs-internal" title="            Insert" href="../intervention_grammar.process_operators/#intervention_grammar.process_operators.Insert"><code>Insert</code></a>. Default "straight".</p>
+            <p>How the new piece is brought in, see <a class="autorefs autorefs-internal" title="            Insert" href="../intervention_grammar.process_operators/#intervention_grammar.process_operators.Insert"><code>Insert</code></a>. Default "straight".</p>
           </div>
         </li>
     </ul>
@@ -1878,19 +1715,19 @@ Secure. The two remaining pieces are <code>member.a</code> and <code>member.b</c
 
                   <details class="mkdocstrings-source">
                     <summary>Source code in <code>src/intervention_grammar/approaches.py</code></summary>
-                    <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#intervention_grammar.approaches.MidProsthesis--source--__codelineno-0-273">273</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.MidProsthesis--source--__codelineno-0-274">274</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.MidProsthesis--source--__codelineno-0-275">275</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.MidProsthesis--source--__codelineno-0-276">276</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.MidProsthesis--source--__codelineno-0-277">277</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.MidProsthesis--source--__codelineno-0-278">278</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.MidProsthesis--source--__codelineno-0-279">279</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="intervention_grammar.approaches.MidProsthesis--source--__codelineno-0-273" name="intervention_grammar.approaches.MidProsthesis--source--__codelineno-0-273"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">member</span><span class="p">,</span> <span class="n">span</span><span class="p">,</span> <span class="n">joints</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">zone</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s2">"straight"</span><span class="p">):</span>
-<a id="intervention_grammar.approaches.MidProsthesis--source--__codelineno-0-274" name="intervention_grammar.approaches.MidProsthesis--source--__codelineno-0-274"></a>    <span class="nb">super</span><span class="p">(</span><span class="n">MidProsthesis</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-<a id="intervention_grammar.approaches.MidProsthesis--source--__codelineno-0-275" name="intervention_grammar.approaches.MidProsthesis--source--__codelineno-0-275"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">member</span> <span class="o">=</span> <span class="n">member</span>
-<a id="intervention_grammar.approaches.MidProsthesis--source--__codelineno-0-276" name="intervention_grammar.approaches.MidProsthesis--source--__codelineno-0-276"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">span</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">span</span><span class="p">)</span>
-<a id="intervention_grammar.approaches.MidProsthesis--source--__codelineno-0-277" name="intervention_grammar.approaches.MidProsthesis--source--__codelineno-0-277"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">joints</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">joints</span><span class="p">)</span> <span class="k">if</span> <span class="n">joints</span> <span class="k">else</span> <span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">]</span>
-<a id="intervention_grammar.approaches.MidProsthesis--source--__codelineno-0-278" name="intervention_grammar.approaches.MidProsthesis--source--__codelineno-0-278"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">zone</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">zone</span><span class="p">)</span> <span class="k">if</span> <span class="n">zone</span> <span class="k">else</span> <span class="kc">None</span>
-<a id="intervention_grammar.approaches.MidProsthesis--source--__codelineno-0-279" name="intervention_grammar.approaches.MidProsthesis--source--__codelineno-0-279"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span> <span class="n">path</span>
+                    <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#intervention_grammar.approaches.Prosthesis--source--__codelineno-0-205">205</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Prosthesis--source--__codelineno-0-206">206</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Prosthesis--source--__codelineno-0-207">207</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Prosthesis--source--__codelineno-0-208">208</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Prosthesis--source--__codelineno-0-209">209</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Prosthesis--source--__codelineno-0-210">210</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Prosthesis--source--__codelineno-0-211">211</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="intervention_grammar.approaches.Prosthesis--source--__codelineno-0-205" name="intervention_grammar.approaches.Prosthesis--source--__codelineno-0-205"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">member</span><span class="p">,</span> <span class="n">span</span><span class="p">,</span> <span class="n">joint</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">zone</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s2">"straight"</span><span class="p">):</span>
+<a id="intervention_grammar.approaches.Prosthesis--source--__codelineno-0-206" name="intervention_grammar.approaches.Prosthesis--source--__codelineno-0-206"></a>    <span class="nb">super</span><span class="p">(</span><span class="n">Prosthesis</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+<a id="intervention_grammar.approaches.Prosthesis--source--__codelineno-0-207" name="intervention_grammar.approaches.Prosthesis--source--__codelineno-0-207"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">member</span> <span class="o">=</span> <span class="n">member</span>
+<a id="intervention_grammar.approaches.Prosthesis--source--__codelineno-0-208" name="intervention_grammar.approaches.Prosthesis--source--__codelineno-0-208"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">span</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">span</span><span class="p">)</span>
+<a id="intervention_grammar.approaches.Prosthesis--source--__codelineno-0-209" name="intervention_grammar.approaches.Prosthesis--source--__codelineno-0-209"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">joint</span> <span class="o">=</span> <span class="n">joint</span>
+<a id="intervention_grammar.approaches.Prosthesis--source--__codelineno-0-210" name="intervention_grammar.approaches.Prosthesis--source--__codelineno-0-210"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">zone</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">zone</span><span class="p">)</span> <span class="k">if</span> <span class="n">zone</span> <span class="k">else</span> <span class="kc">None</span>
+<a id="intervention_grammar.approaches.Prosthesis--source--__codelineno-0-211" name="intervention_grammar.approaches.Prosthesis--source--__codelineno-0-211"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span> <span class="n">path</span>
 </code></pre></div></td></tr></table></div>
                   </details>
 
@@ -1982,15 +1819,15 @@ keeps the name unless <code>new</code> is given.</p>
 
                   <details class="mkdocstrings-source">
                     <summary>Source code in <code>src/intervention_grammar/approaches.py</code></summary>
-                    <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#intervention_grammar.approaches.Replacement--source--__codelineno-0-336">336</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Replacement--source--__codelineno-0-337">337</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Replacement--source--__codelineno-0-338">338</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Replacement--source--__codelineno-0-339">339</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Replacement--source--__codelineno-0-340">340</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="intervention_grammar.approaches.Replacement--source--__codelineno-0-336" name="intervention_grammar.approaches.Replacement--source--__codelineno-0-336"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">member</span><span class="p">,</span> <span class="n">new</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s2">"straight"</span><span class="p">):</span>
-<a id="intervention_grammar.approaches.Replacement--source--__codelineno-0-337" name="intervention_grammar.approaches.Replacement--source--__codelineno-0-337"></a>    <span class="nb">super</span><span class="p">(</span><span class="n">Replacement</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-<a id="intervention_grammar.approaches.Replacement--source--__codelineno-0-338" name="intervention_grammar.approaches.Replacement--source--__codelineno-0-338"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">member</span> <span class="o">=</span> <span class="n">member</span>
-<a id="intervention_grammar.approaches.Replacement--source--__codelineno-0-339" name="intervention_grammar.approaches.Replacement--source--__codelineno-0-339"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">new</span> <span class="o">=</span> <span class="n">new</span> <span class="ow">or</span> <span class="n">member</span>
-<a id="intervention_grammar.approaches.Replacement--source--__codelineno-0-340" name="intervention_grammar.approaches.Replacement--source--__codelineno-0-340"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span> <span class="n">path</span>
+                    <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#intervention_grammar.approaches.Replacement--source--__codelineno-0-318">318</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Replacement--source--__codelineno-0-319">319</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Replacement--source--__codelineno-0-320">320</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Replacement--source--__codelineno-0-321">321</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Replacement--source--__codelineno-0-322">322</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="intervention_grammar.approaches.Replacement--source--__codelineno-0-318" name="intervention_grammar.approaches.Replacement--source--__codelineno-0-318"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">member</span><span class="p">,</span> <span class="n">new</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s2">"straight"</span><span class="p">):</span>
+<a id="intervention_grammar.approaches.Replacement--source--__codelineno-0-319" name="intervention_grammar.approaches.Replacement--source--__codelineno-0-319"></a>    <span class="nb">super</span><span class="p">(</span><span class="n">Replacement</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+<a id="intervention_grammar.approaches.Replacement--source--__codelineno-0-320" name="intervention_grammar.approaches.Replacement--source--__codelineno-0-320"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">member</span> <span class="o">=</span> <span class="n">member</span>
+<a id="intervention_grammar.approaches.Replacement--source--__codelineno-0-321" name="intervention_grammar.approaches.Replacement--source--__codelineno-0-321"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">new</span> <span class="o">=</span> <span class="n">new</span> <span class="ow">or</span> <span class="n">member</span>
+<a id="intervention_grammar.approaches.Replacement--source--__codelineno-0-322" name="intervention_grammar.approaches.Replacement--source--__codelineno-0-322"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span> <span class="n">path</span>
 </code></pre></div></td></tr></table></div>
                   </details>
 
@@ -2102,19 +1939,19 @@ keeps the name unless <code>new</code> is given.</p>
 
                   <details class="mkdocstrings-source">
                     <summary>Source code in <code>src/intervention_grammar/approaches.py</code></summary>
-                    <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#intervention_grammar.approaches.Reinforcement--source--__codelineno-0-389">389</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Reinforcement--source--__codelineno-0-390">390</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Reinforcement--source--__codelineno-0-391">391</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Reinforcement--source--__codelineno-0-392">392</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Reinforcement--source--__codelineno-0-393">393</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Reinforcement--source--__codelineno-0-394">394</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Reinforcement--source--__codelineno-0-395">395</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="intervention_grammar.approaches.Reinforcement--source--__codelineno-0-389" name="intervention_grammar.approaches.Reinforcement--source--__codelineno-0-389"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">member</span><span class="p">,</span> <span class="n">piece</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">face</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">span</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">joint</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<a id="intervention_grammar.approaches.Reinforcement--source--__codelineno-0-390" name="intervention_grammar.approaches.Reinforcement--source--__codelineno-0-390"></a>    <span class="nb">super</span><span class="p">(</span><span class="n">Reinforcement</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-<a id="intervention_grammar.approaches.Reinforcement--source--__codelineno-0-391" name="intervention_grammar.approaches.Reinforcement--source--__codelineno-0-391"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">member</span> <span class="o">=</span> <span class="n">member</span>
-<a id="intervention_grammar.approaches.Reinforcement--source--__codelineno-0-392" name="intervention_grammar.approaches.Reinforcement--source--__codelineno-0-392"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">piece</span> <span class="o">=</span> <span class="n">piece</span> <span class="ow">or</span> <span class="n">member</span> <span class="o">+</span> <span class="s2">".double"</span>
-<a id="intervention_grammar.approaches.Reinforcement--source--__codelineno-0-393" name="intervention_grammar.approaches.Reinforcement--source--__codelineno-0-393"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">face</span> <span class="o">=</span> <span class="n">face</span>
-<a id="intervention_grammar.approaches.Reinforcement--source--__codelineno-0-394" name="intervention_grammar.approaches.Reinforcement--source--__codelineno-0-394"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">span</span> <span class="o">=</span> <span class="n">span</span>
-<a id="intervention_grammar.approaches.Reinforcement--source--__codelineno-0-395" name="intervention_grammar.approaches.Reinforcement--source--__codelineno-0-395"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">joint</span> <span class="o">=</span> <span class="n">joint</span>
+                    <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#intervention_grammar.approaches.Reinforcement--source--__codelineno-0-371">371</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Reinforcement--source--__codelineno-0-372">372</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Reinforcement--source--__codelineno-0-373">373</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Reinforcement--source--__codelineno-0-374">374</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Reinforcement--source--__codelineno-0-375">375</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Reinforcement--source--__codelineno-0-376">376</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Reinforcement--source--__codelineno-0-377">377</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="intervention_grammar.approaches.Reinforcement--source--__codelineno-0-371" name="intervention_grammar.approaches.Reinforcement--source--__codelineno-0-371"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">member</span><span class="p">,</span> <span class="n">piece</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">face</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">span</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">joint</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<a id="intervention_grammar.approaches.Reinforcement--source--__codelineno-0-372" name="intervention_grammar.approaches.Reinforcement--source--__codelineno-0-372"></a>    <span class="nb">super</span><span class="p">(</span><span class="n">Reinforcement</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+<a id="intervention_grammar.approaches.Reinforcement--source--__codelineno-0-373" name="intervention_grammar.approaches.Reinforcement--source--__codelineno-0-373"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">member</span> <span class="o">=</span> <span class="n">member</span>
+<a id="intervention_grammar.approaches.Reinforcement--source--__codelineno-0-374" name="intervention_grammar.approaches.Reinforcement--source--__codelineno-0-374"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">piece</span> <span class="o">=</span> <span class="n">piece</span> <span class="ow">or</span> <span class="n">member</span> <span class="o">+</span> <span class="s2">".double"</span>
+<a id="intervention_grammar.approaches.Reinforcement--source--__codelineno-0-375" name="intervention_grammar.approaches.Reinforcement--source--__codelineno-0-375"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">face</span> <span class="o">=</span> <span class="n">face</span>
+<a id="intervention_grammar.approaches.Reinforcement--source--__codelineno-0-376" name="intervention_grammar.approaches.Reinforcement--source--__codelineno-0-376"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">span</span> <span class="o">=</span> <span class="n">span</span>
+<a id="intervention_grammar.approaches.Reinforcement--source--__codelineno-0-377" name="intervention_grammar.approaches.Reinforcement--source--__codelineno-0-377"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">joint</span> <span class="o">=</span> <span class="n">joint</span>
 </code></pre></div></td></tr></table></div>
                   </details>
 
@@ -2224,19 +2061,19 @@ keeps the name unless <code>new</code> is given.</p>
 
                   <details class="mkdocstrings-source">
                     <summary>Source code in <code>src/intervention_grammar/approaches.py</code></summary>
-                    <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#intervention_grammar.approaches.Addition--source--__codelineno-0-425">425</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Addition--source--__codelineno-0-426">426</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Addition--source--__codelineno-0-427">427</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Addition--source--__codelineno-0-428">428</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Addition--source--__codelineno-0-429">429</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Addition--source--__codelineno-0-430">430</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Addition--source--__codelineno-0-431">431</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="intervention_grammar.approaches.Addition--source--__codelineno-0-425" name="intervention_grammar.approaches.Addition--source--__codelineno-0-425"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">member</span><span class="p">,</span> <span class="n">between</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">joint</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<a id="intervention_grammar.approaches.Addition--source--__codelineno-0-426" name="intervention_grammar.approaches.Addition--source--__codelineno-0-426"></a>    <span class="nb">super</span><span class="p">(</span><span class="n">Addition</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-<a id="intervention_grammar.approaches.Addition--source--__codelineno-0-427" name="intervention_grammar.approaches.Addition--source--__codelineno-0-427"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">member</span> <span class="o">=</span> <span class="n">member</span>
-<a id="intervention_grammar.approaches.Addition--source--__codelineno-0-428" name="intervention_grammar.approaches.Addition--source--__codelineno-0-428"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">between</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">between</span><span class="p">)</span>
-<a id="intervention_grammar.approaches.Addition--source--__codelineno-0-429" name="intervention_grammar.approaches.Addition--source--__codelineno-0-429"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="nb">type</span>
-<a id="intervention_grammar.approaches.Addition--source--__codelineno-0-430" name="intervention_grammar.approaches.Addition--source--__codelineno-0-430"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">joint</span> <span class="o">=</span> <span class="n">joint</span>
-<a id="intervention_grammar.approaches.Addition--source--__codelineno-0-431" name="intervention_grammar.approaches.Addition--source--__codelineno-0-431"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">length</span> <span class="o">=</span> <span class="n">length</span>
+                    <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#intervention_grammar.approaches.Addition--source--__codelineno-0-407">407</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Addition--source--__codelineno-0-408">408</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Addition--source--__codelineno-0-409">409</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Addition--source--__codelineno-0-410">410</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Addition--source--__codelineno-0-411">411</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Addition--source--__codelineno-0-412">412</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Addition--source--__codelineno-0-413">413</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="intervention_grammar.approaches.Addition--source--__codelineno-0-407" name="intervention_grammar.approaches.Addition--source--__codelineno-0-407"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">member</span><span class="p">,</span> <span class="n">between</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">joint</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">length</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<a id="intervention_grammar.approaches.Addition--source--__codelineno-0-408" name="intervention_grammar.approaches.Addition--source--__codelineno-0-408"></a>    <span class="nb">super</span><span class="p">(</span><span class="n">Addition</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+<a id="intervention_grammar.approaches.Addition--source--__codelineno-0-409" name="intervention_grammar.approaches.Addition--source--__codelineno-0-409"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">member</span> <span class="o">=</span> <span class="n">member</span>
+<a id="intervention_grammar.approaches.Addition--source--__codelineno-0-410" name="intervention_grammar.approaches.Addition--source--__codelineno-0-410"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">between</span> <span class="o">=</span> <span class="nb">dict</span><span class="p">(</span><span class="n">between</span><span class="p">)</span>
+<a id="intervention_grammar.approaches.Addition--source--__codelineno-0-411" name="intervention_grammar.approaches.Addition--source--__codelineno-0-411"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="nb">type</span>
+<a id="intervention_grammar.approaches.Addition--source--__codelineno-0-412" name="intervention_grammar.approaches.Addition--source--__codelineno-0-412"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">joint</span> <span class="o">=</span> <span class="n">joint</span>
+<a id="intervention_grammar.approaches.Addition--source--__codelineno-0-413" name="intervention_grammar.approaches.Addition--source--__codelineno-0-413"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">length</span> <span class="o">=</span> <span class="n">length</span>
 </code></pre></div></td></tr></table></div>
                   </details>
 
@@ -2314,13 +2151,13 @@ keeps the name unless <code>new</code> is given.</p>
 
                   <details class="mkdocstrings-source">
                     <summary>Source code in <code>src/intervention_grammar/approaches.py</code></summary>
-                    <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#intervention_grammar.approaches.Reconnection--source--__codelineno-0-473">473</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Reconnection--source--__codelineno-0-474">474</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Reconnection--source--__codelineno-0-475">475</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Reconnection--source--__codelineno-0-476">476</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="intervention_grammar.approaches.Reconnection--source--__codelineno-0-473" name="intervention_grammar.approaches.Reconnection--source--__codelineno-0-473"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">member</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
-<a id="intervention_grammar.approaches.Reconnection--source--__codelineno-0-474" name="intervention_grammar.approaches.Reconnection--source--__codelineno-0-474"></a>    <span class="nb">super</span><span class="p">(</span><span class="n">Reconnection</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-<a id="intervention_grammar.approaches.Reconnection--source--__codelineno-0-475" name="intervention_grammar.approaches.Reconnection--source--__codelineno-0-475"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">member</span> <span class="o">=</span> <span class="n">member</span>
-<a id="intervention_grammar.approaches.Reconnection--source--__codelineno-0-476" name="intervention_grammar.approaches.Reconnection--source--__codelineno-0-476"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">other</span> <span class="o">=</span> <span class="n">other</span>
+                    <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#intervention_grammar.approaches.Reconnection--source--__codelineno-0-455">455</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Reconnection--source--__codelineno-0-456">456</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Reconnection--source--__codelineno-0-457">457</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Reconnection--source--__codelineno-0-458">458</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="intervention_grammar.approaches.Reconnection--source--__codelineno-0-455" name="intervention_grammar.approaches.Reconnection--source--__codelineno-0-455"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">member</span><span class="p">,</span> <span class="n">other</span><span class="p">):</span>
+<a id="intervention_grammar.approaches.Reconnection--source--__codelineno-0-456" name="intervention_grammar.approaches.Reconnection--source--__codelineno-0-456"></a>    <span class="nb">super</span><span class="p">(</span><span class="n">Reconnection</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+<a id="intervention_grammar.approaches.Reconnection--source--__codelineno-0-457" name="intervention_grammar.approaches.Reconnection--source--__codelineno-0-457"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">member</span> <span class="o">=</span> <span class="n">member</span>
+<a id="intervention_grammar.approaches.Reconnection--source--__codelineno-0-458" name="intervention_grammar.approaches.Reconnection--source--__codelineno-0-458"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">other</span> <span class="o">=</span> <span class="n">other</span>
 </code></pre></div></td></tr></table></div>
                   </details>
 
@@ -2398,13 +2235,13 @@ keeps the name unless <code>new</code> is given.</p>
 
                   <details class="mkdocstrings-source">
                     <summary>Source code in <code>src/intervention_grammar/approaches.py</code></summary>
-                    <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#intervention_grammar.approaches.Realignment--source--__codelineno-0-504">504</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Realignment--source--__codelineno-0-505">505</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Realignment--source--__codelineno-0-506">506</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Realignment--source--__codelineno-0-507">507</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="intervention_grammar.approaches.Realignment--source--__codelineno-0-504" name="intervention_grammar.approaches.Realignment--source--__codelineno-0-504"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">members</span><span class="p">,</span> <span class="n">by</span><span class="p">):</span>
-<a id="intervention_grammar.approaches.Realignment--source--__codelineno-0-505" name="intervention_grammar.approaches.Realignment--source--__codelineno-0-505"></a>    <span class="nb">super</span><span class="p">(</span><span class="n">Realignment</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-<a id="intervention_grammar.approaches.Realignment--source--__codelineno-0-506" name="intervention_grammar.approaches.Realignment--source--__codelineno-0-506"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">members</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">members</span><span class="p">)</span>
-<a id="intervention_grammar.approaches.Realignment--source--__codelineno-0-507" name="intervention_grammar.approaches.Realignment--source--__codelineno-0-507"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">by</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">by</span><span class="p">)</span>
+                    <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#intervention_grammar.approaches.Realignment--source--__codelineno-0-486">486</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Realignment--source--__codelineno-0-487">487</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Realignment--source--__codelineno-0-488">488</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Realignment--source--__codelineno-0-489">489</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="intervention_grammar.approaches.Realignment--source--__codelineno-0-486" name="intervention_grammar.approaches.Realignment--source--__codelineno-0-486"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">members</span><span class="p">,</span> <span class="n">by</span><span class="p">):</span>
+<a id="intervention_grammar.approaches.Realignment--source--__codelineno-0-487" name="intervention_grammar.approaches.Realignment--source--__codelineno-0-487"></a>    <span class="nb">super</span><span class="p">(</span><span class="n">Realignment</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+<a id="intervention_grammar.approaches.Realignment--source--__codelineno-0-488" name="intervention_grammar.approaches.Realignment--source--__codelineno-0-488"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">members</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">members</span><span class="p">)</span>
+<a id="intervention_grammar.approaches.Realignment--source--__codelineno-0-489" name="intervention_grammar.approaches.Realignment--source--__codelineno-0-489"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">by</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">by</span><span class="p">)</span>
 </code></pre></div></td></tr></table></div>
                   </details>
 
@@ -2485,13 +2322,13 @@ whole member is removed.</p>
 
                   <details class="mkdocstrings-source">
                     <summary>Source code in <code>src/intervention_grammar/approaches.py</code></summary>
-                    <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#intervention_grammar.approaches.Subtraction--source--__codelineno-0-538">538</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Subtraction--source--__codelineno-0-539">539</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Subtraction--source--__codelineno-0-540">540</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Subtraction--source--__codelineno-0-541">541</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="intervention_grammar.approaches.Subtraction--source--__codelineno-0-538" name="intervention_grammar.approaches.Subtraction--source--__codelineno-0-538"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">member</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<a id="intervention_grammar.approaches.Subtraction--source--__codelineno-0-539" name="intervention_grammar.approaches.Subtraction--source--__codelineno-0-539"></a>    <span class="nb">super</span><span class="p">(</span><span class="n">Subtraction</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-<a id="intervention_grammar.approaches.Subtraction--source--__codelineno-0-540" name="intervention_grammar.approaches.Subtraction--source--__codelineno-0-540"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">member</span> <span class="o">=</span> <span class="n">member</span>
-<a id="intervention_grammar.approaches.Subtraction--source--__codelineno-0-541" name="intervention_grammar.approaches.Subtraction--source--__codelineno-0-541"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">region</span> <span class="o">=</span> <span class="n">region</span>
+                    <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#intervention_grammar.approaches.Subtraction--source--__codelineno-0-520">520</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Subtraction--source--__codelineno-0-521">521</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Subtraction--source--__codelineno-0-522">522</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Subtraction--source--__codelineno-0-523">523</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="intervention_grammar.approaches.Subtraction--source--__codelineno-0-520" name="intervention_grammar.approaches.Subtraction--source--__codelineno-0-520"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">member</span><span class="p">,</span> <span class="n">region</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<a id="intervention_grammar.approaches.Subtraction--source--__codelineno-0-521" name="intervention_grammar.approaches.Subtraction--source--__codelineno-0-521"></a>    <span class="nb">super</span><span class="p">(</span><span class="n">Subtraction</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+<a id="intervention_grammar.approaches.Subtraction--source--__codelineno-0-522" name="intervention_grammar.approaches.Subtraction--source--__codelineno-0-522"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">member</span> <span class="o">=</span> <span class="n">member</span>
+<a id="intervention_grammar.approaches.Subtraction--source--__codelineno-0-523" name="intervention_grammar.approaches.Subtraction--source--__codelineno-0-523"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">region</span> <span class="o">=</span> <span class="n">region</span>
 </code></pre></div></td></tr></table></div>
                   </details>
 
@@ -2594,17 +2431,17 @@ Cut(new ones) ; Insert ; Seat ; Secure.</p>
 
                   <details class="mkdocstrings-source">
                     <summary>Source code in <code>src/intervention_grammar/approaches.py</code></summary>
-                    <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#intervention_grammar.approaches.Repositioning--source--__codelineno-0-572">572</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Repositioning--source--__codelineno-0-573">573</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Repositioning--source--__codelineno-0-574">574</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Repositioning--source--__codelineno-0-575">575</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Repositioning--source--__codelineno-0-576">576</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Repositioning--source--__codelineno-0-577">577</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="intervention_grammar.approaches.Repositioning--source--__codelineno-0-572" name="intervention_grammar.approaches.Repositioning--source--__codelineno-0-572"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">member</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">"end"</span><span class="p">,</span> <span class="n">quarter</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s2">"straight"</span><span class="p">):</span>
-<a id="intervention_grammar.approaches.Repositioning--source--__codelineno-0-573" name="intervention_grammar.approaches.Repositioning--source--__codelineno-0-573"></a>    <span class="nb">super</span><span class="p">(</span><span class="n">Repositioning</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-<a id="intervention_grammar.approaches.Repositioning--source--__codelineno-0-574" name="intervention_grammar.approaches.Repositioning--source--__codelineno-0-574"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">member</span> <span class="o">=</span> <span class="n">member</span>
-<a id="intervention_grammar.approaches.Repositioning--source--__codelineno-0-575" name="intervention_grammar.approaches.Repositioning--source--__codelineno-0-575"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="o">=</span> <span class="n">mode</span>
-<a id="intervention_grammar.approaches.Repositioning--source--__codelineno-0-576" name="intervention_grammar.approaches.Repositioning--source--__codelineno-0-576"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">quarter</span> <span class="o">=</span> <span class="n">quarter</span>
-<a id="intervention_grammar.approaches.Repositioning--source--__codelineno-0-577" name="intervention_grammar.approaches.Repositioning--source--__codelineno-0-577"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span> <span class="n">path</span>
+                    <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#intervention_grammar.approaches.Repositioning--source--__codelineno-0-554">554</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Repositioning--source--__codelineno-0-555">555</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Repositioning--source--__codelineno-0-556">556</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Repositioning--source--__codelineno-0-557">557</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Repositioning--source--__codelineno-0-558">558</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Repositioning--source--__codelineno-0-559">559</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="intervention_grammar.approaches.Repositioning--source--__codelineno-0-554" name="intervention_grammar.approaches.Repositioning--source--__codelineno-0-554"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">member</span><span class="p">,</span> <span class="n">mode</span><span class="o">=</span><span class="s2">"end"</span><span class="p">,</span> <span class="n">quarter</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">path</span><span class="o">=</span><span class="s2">"straight"</span><span class="p">):</span>
+<a id="intervention_grammar.approaches.Repositioning--source--__codelineno-0-555" name="intervention_grammar.approaches.Repositioning--source--__codelineno-0-555"></a>    <span class="nb">super</span><span class="p">(</span><span class="n">Repositioning</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+<a id="intervention_grammar.approaches.Repositioning--source--__codelineno-0-556" name="intervention_grammar.approaches.Repositioning--source--__codelineno-0-556"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">member</span> <span class="o">=</span> <span class="n">member</span>
+<a id="intervention_grammar.approaches.Repositioning--source--__codelineno-0-557" name="intervention_grammar.approaches.Repositioning--source--__codelineno-0-557"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">mode</span> <span class="o">=</span> <span class="n">mode</span>
+<a id="intervention_grammar.approaches.Repositioning--source--__codelineno-0-558" name="intervention_grammar.approaches.Repositioning--source--__codelineno-0-558"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">quarter</span> <span class="o">=</span> <span class="n">quarter</span>
+<a id="intervention_grammar.approaches.Repositioning--source--__codelineno-0-559" name="intervention_grammar.approaches.Repositioning--source--__codelineno-0-559"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">path</span> <span class="o">=</span> <span class="n">path</span>
 </code></pre></div></td></tr></table></div>
                   </details>
 
@@ -2710,19 +2547,19 @@ between the stations is cut out.</p>
 
                   <details class="mkdocstrings-source">
                     <summary>Source code in <code>src/intervention_grammar/approaches.py</code></summary>
-                    <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#intervention_grammar.approaches.Collapse--source--__codelineno-0-623">623</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Collapse--source--__codelineno-0-624">624</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Collapse--source--__codelineno-0-625">625</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Collapse--source--__codelineno-0-626">626</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Collapse--source--__codelineno-0-627">627</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Collapse--source--__codelineno-0-628">628</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Collapse--source--__codelineno-0-629">629</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="intervention_grammar.approaches.Collapse--source--__codelineno-0-623" name="intervention_grammar.approaches.Collapse--source--__codelineno-0-623"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">remove</span><span class="p">,</span> <span class="n">ring</span><span class="p">,</span> <span class="n">rest</span><span class="p">,</span> <span class="n">by</span><span class="p">,</span> <span class="n">joint</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<a id="intervention_grammar.approaches.Collapse--source--__codelineno-0-624" name="intervention_grammar.approaches.Collapse--source--__codelineno-0-624"></a>    <span class="nb">super</span><span class="p">(</span><span class="n">Collapse</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-<a id="intervention_grammar.approaches.Collapse--source--__codelineno-0-625" name="intervention_grammar.approaches.Collapse--source--__codelineno-0-625"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">remove</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">remove</span><span class="p">)</span>
-<a id="intervention_grammar.approaches.Collapse--source--__codelineno-0-626" name="intervention_grammar.approaches.Collapse--source--__codelineno-0-626"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">ring</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">ring</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
-<a id="intervention_grammar.approaches.Collapse--source--__codelineno-0-627" name="intervention_grammar.approaches.Collapse--source--__codelineno-0-627"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">rest</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">rest</span><span class="p">)</span>
-<a id="intervention_grammar.approaches.Collapse--source--__codelineno-0-628" name="intervention_grammar.approaches.Collapse--source--__codelineno-0-628"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">by</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">by</span><span class="p">)</span>
-<a id="intervention_grammar.approaches.Collapse--source--__codelineno-0-629" name="intervention_grammar.approaches.Collapse--source--__codelineno-0-629"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">joint</span> <span class="o">=</span> <span class="n">joint</span>
+                    <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#intervention_grammar.approaches.Collapse--source--__codelineno-0-605">605</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Collapse--source--__codelineno-0-606">606</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Collapse--source--__codelineno-0-607">607</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Collapse--source--__codelineno-0-608">608</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Collapse--source--__codelineno-0-609">609</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Collapse--source--__codelineno-0-610">610</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Collapse--source--__codelineno-0-611">611</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="intervention_grammar.approaches.Collapse--source--__codelineno-0-605" name="intervention_grammar.approaches.Collapse--source--__codelineno-0-605"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">remove</span><span class="p">,</span> <span class="n">ring</span><span class="p">,</span> <span class="n">rest</span><span class="p">,</span> <span class="n">by</span><span class="p">,</span> <span class="n">joint</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<a id="intervention_grammar.approaches.Collapse--source--__codelineno-0-606" name="intervention_grammar.approaches.Collapse--source--__codelineno-0-606"></a>    <span class="nb">super</span><span class="p">(</span><span class="n">Collapse</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+<a id="intervention_grammar.approaches.Collapse--source--__codelineno-0-607" name="intervention_grammar.approaches.Collapse--source--__codelineno-0-607"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">remove</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">remove</span><span class="p">)</span>
+<a id="intervention_grammar.approaches.Collapse--source--__codelineno-0-608" name="intervention_grammar.approaches.Collapse--source--__codelineno-0-608"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">ring</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="nb">list</span><span class="p">(</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">ring</span><span class="o">.</span><span class="n">items</span><span class="p">()}</span>
+<a id="intervention_grammar.approaches.Collapse--source--__codelineno-0-609" name="intervention_grammar.approaches.Collapse--source--__codelineno-0-609"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">rest</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">rest</span><span class="p">)</span>
+<a id="intervention_grammar.approaches.Collapse--source--__codelineno-0-610" name="intervention_grammar.approaches.Collapse--source--__codelineno-0-610"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">by</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">by</span><span class="p">)</span>
+<a id="intervention_grammar.approaches.Collapse--source--__codelineno-0-611" name="intervention_grammar.approaches.Collapse--source--__codelineno-0-611"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">joint</span> <span class="o">=</span> <span class="n">joint</span>
 </code></pre></div></td></tr></table></div>
                   </details>
 
@@ -2838,21 +2675,21 @@ between the stations is cut out.</p>
 
                   <details class="mkdocstrings-source">
                     <summary>Source code in <code>src/intervention_grammar/approaches.py</code></summary>
-                    <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#intervention_grammar.approaches.Bypass--source--__codelineno-0-674">674</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Bypass--source--__codelineno-0-675">675</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Bypass--source--__codelineno-0-676">676</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Bypass--source--__codelineno-0-677">677</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Bypass--source--__codelineno-0-678">678</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Bypass--source--__codelineno-0-679">679</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Bypass--source--__codelineno-0-680">680</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Bypass--source--__codelineno-0-681">681</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="intervention_grammar.approaches.Bypass--source--__codelineno-0-674" name="intervention_grammar.approaches.Bypass--source--__codelineno-0-674"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">member</span><span class="p">,</span> <span class="n">through</span><span class="p">,</span> <span class="n">to</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">"start"</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">at</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
-<a id="intervention_grammar.approaches.Bypass--source--__codelineno-0-675" name="intervention_grammar.approaches.Bypass--source--__codelineno-0-675"></a>    <span class="nb">super</span><span class="p">(</span><span class="n">Bypass</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-<a id="intervention_grammar.approaches.Bypass--source--__codelineno-0-676" name="intervention_grammar.approaches.Bypass--source--__codelineno-0-676"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">member</span> <span class="o">=</span> <span class="n">member</span>
-<a id="intervention_grammar.approaches.Bypass--source--__codelineno-0-677" name="intervention_grammar.approaches.Bypass--source--__codelineno-0-677"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">through</span> <span class="o">=</span> <span class="n">through</span>
-<a id="intervention_grammar.approaches.Bypass--source--__codelineno-0-678" name="intervention_grammar.approaches.Bypass--source--__codelineno-0-678"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">to</span> <span class="o">=</span> <span class="n">to</span>
-<a id="intervention_grammar.approaches.Bypass--source--__codelineno-0-679" name="intervention_grammar.approaches.Bypass--source--__codelineno-0-679"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">end</span> <span class="o">=</span> <span class="n">end</span>
-<a id="intervention_grammar.approaches.Bypass--source--__codelineno-0-680" name="intervention_grammar.approaches.Bypass--source--__codelineno-0-680"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">by</span> <span class="o">=</span> <span class="n">by</span>
-<a id="intervention_grammar.approaches.Bypass--source--__codelineno-0-681" name="intervention_grammar.approaches.Bypass--source--__codelineno-0-681"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">at</span> <span class="o">=</span> <span class="n">at</span>
+                    <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#intervention_grammar.approaches.Bypass--source--__codelineno-0-656">656</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Bypass--source--__codelineno-0-657">657</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Bypass--source--__codelineno-0-658">658</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Bypass--source--__codelineno-0-659">659</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Bypass--source--__codelineno-0-660">660</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Bypass--source--__codelineno-0-661">661</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Bypass--source--__codelineno-0-662">662</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Bypass--source--__codelineno-0-663">663</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="intervention_grammar.approaches.Bypass--source--__codelineno-0-656" name="intervention_grammar.approaches.Bypass--source--__codelineno-0-656"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">member</span><span class="p">,</span> <span class="n">through</span><span class="p">,</span> <span class="n">to</span><span class="p">,</span> <span class="n">end</span><span class="o">=</span><span class="s2">"start"</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">at</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<a id="intervention_grammar.approaches.Bypass--source--__codelineno-0-657" name="intervention_grammar.approaches.Bypass--source--__codelineno-0-657"></a>    <span class="nb">super</span><span class="p">(</span><span class="n">Bypass</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+<a id="intervention_grammar.approaches.Bypass--source--__codelineno-0-658" name="intervention_grammar.approaches.Bypass--source--__codelineno-0-658"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">member</span> <span class="o">=</span> <span class="n">member</span>
+<a id="intervention_grammar.approaches.Bypass--source--__codelineno-0-659" name="intervention_grammar.approaches.Bypass--source--__codelineno-0-659"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">through</span> <span class="o">=</span> <span class="n">through</span>
+<a id="intervention_grammar.approaches.Bypass--source--__codelineno-0-660" name="intervention_grammar.approaches.Bypass--source--__codelineno-0-660"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">to</span> <span class="o">=</span> <span class="n">to</span>
+<a id="intervention_grammar.approaches.Bypass--source--__codelineno-0-661" name="intervention_grammar.approaches.Bypass--source--__codelineno-0-661"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">end</span> <span class="o">=</span> <span class="n">end</span>
+<a id="intervention_grammar.approaches.Bypass--source--__codelineno-0-662" name="intervention_grammar.approaches.Bypass--source--__codelineno-0-662"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">by</span> <span class="o">=</span> <span class="n">by</span>
+<a id="intervention_grammar.approaches.Bypass--source--__codelineno-0-663" name="intervention_grammar.approaches.Bypass--source--__codelineno-0-663"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">at</span> <span class="o">=</span> <span class="n">at</span>
 </code></pre></div></td></tr></table></div>
                   </details>
 
@@ -2948,17 +2785,17 @@ Seat(new base) ; Move(above, down) ; Join ; Secure ; Unprop.</p>
 
                   <details class="mkdocstrings-source">
                     <summary>Source code in <code>src/intervention_grammar/approaches.py</code></summary>
-                    <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#intervention_grammar.approaches.Lowering--source--__codelineno-0-724">724</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Lowering--source--__codelineno-0-725">725</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Lowering--source--__codelineno-0-726">726</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Lowering--source--__codelineno-0-727">727</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Lowering--source--__codelineno-0-728">728</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Lowering--source--__codelineno-0-729">729</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="intervention_grammar.approaches.Lowering--source--__codelineno-0-724" name="intervention_grammar.approaches.Lowering--source--__codelineno-0-724"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">standing</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">above</span><span class="p">,</span> <span class="n">by</span><span class="p">):</span>
-<a id="intervention_grammar.approaches.Lowering--source--__codelineno-0-725" name="intervention_grammar.approaches.Lowering--source--__codelineno-0-725"></a>    <span class="nb">super</span><span class="p">(</span><span class="n">Lowering</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-<a id="intervention_grammar.approaches.Lowering--source--__codelineno-0-726" name="intervention_grammar.approaches.Lowering--source--__codelineno-0-726"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">standing</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">standing</span><span class="p">)</span>
-<a id="intervention_grammar.approaches.Lowering--source--__codelineno-0-727" name="intervention_grammar.approaches.Lowering--source--__codelineno-0-727"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">base</span> <span class="o">=</span> <span class="n">base</span>
-<a id="intervention_grammar.approaches.Lowering--source--__codelineno-0-728" name="intervention_grammar.approaches.Lowering--source--__codelineno-0-728"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">above</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">above</span><span class="p">)</span>
-<a id="intervention_grammar.approaches.Lowering--source--__codelineno-0-729" name="intervention_grammar.approaches.Lowering--source--__codelineno-0-729"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">by</span> <span class="o">=</span> <span class="n">by</span>
+                    <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#intervention_grammar.approaches.Lowering--source--__codelineno-0-706">706</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Lowering--source--__codelineno-0-707">707</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Lowering--source--__codelineno-0-708">708</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Lowering--source--__codelineno-0-709">709</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Lowering--source--__codelineno-0-710">710</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Lowering--source--__codelineno-0-711">711</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="intervention_grammar.approaches.Lowering--source--__codelineno-0-706" name="intervention_grammar.approaches.Lowering--source--__codelineno-0-706"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">standing</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">above</span><span class="p">,</span> <span class="n">by</span><span class="p">):</span>
+<a id="intervention_grammar.approaches.Lowering--source--__codelineno-0-707" name="intervention_grammar.approaches.Lowering--source--__codelineno-0-707"></a>    <span class="nb">super</span><span class="p">(</span><span class="n">Lowering</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+<a id="intervention_grammar.approaches.Lowering--source--__codelineno-0-708" name="intervention_grammar.approaches.Lowering--source--__codelineno-0-708"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">standing</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">standing</span><span class="p">)</span>
+<a id="intervention_grammar.approaches.Lowering--source--__codelineno-0-709" name="intervention_grammar.approaches.Lowering--source--__codelineno-0-709"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">base</span> <span class="o">=</span> <span class="n">base</span>
+<a id="intervention_grammar.approaches.Lowering--source--__codelineno-0-710" name="intervention_grammar.approaches.Lowering--source--__codelineno-0-710"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">above</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="n">above</span><span class="p">)</span>
+<a id="intervention_grammar.approaches.Lowering--source--__codelineno-0-711" name="intervention_grammar.approaches.Lowering--source--__codelineno-0-711"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">by</span> <span class="o">=</span> <span class="n">by</span>
 </code></pre></div></td></tr></table></div>
                   </details>
 
@@ -3039,13 +2876,13 @@ Seat(new base) ; Move(above, down) ; Join ; Secure ; Unprop.</p>
 
                   <details class="mkdocstrings-source">
                     <summary>Source code in <code>src/intervention_grammar/approaches.py</code></summary>
-                    <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#intervention_grammar.approaches.Retain--source--__codelineno-0-766">766</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Retain--source--__codelineno-0-767">767</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Retain--source--__codelineno-0-768">768</a></span>
-<span class="normal"><a href="#intervention_grammar.approaches.Retain--source--__codelineno-0-769">769</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="intervention_grammar.approaches.Retain--source--__codelineno-0-766" name="intervention_grammar.approaches.Retain--source--__codelineno-0-766"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">member</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">note</span><span class="o">=</span><span class="s2">"retained, to be monitored"</span><span class="p">):</span>
-<a id="intervention_grammar.approaches.Retain--source--__codelineno-0-767" name="intervention_grammar.approaches.Retain--source--__codelineno-0-767"></a>    <span class="nb">super</span><span class="p">(</span><span class="n">Retain</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
-<a id="intervention_grammar.approaches.Retain--source--__codelineno-0-768" name="intervention_grammar.approaches.Retain--source--__codelineno-0-768"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">member</span> <span class="o">=</span> <span class="n">member</span>
-<a id="intervention_grammar.approaches.Retain--source--__codelineno-0-769" name="intervention_grammar.approaches.Retain--source--__codelineno-0-769"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">note</span> <span class="o">=</span> <span class="n">note</span>
+                    <div class="language-python highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#intervention_grammar.approaches.Retain--source--__codelineno-0-748">748</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Retain--source--__codelineno-0-749">749</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Retain--source--__codelineno-0-750">750</a></span>
+<span class="normal"><a href="#intervention_grammar.approaches.Retain--source--__codelineno-0-751">751</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="intervention_grammar.approaches.Retain--source--__codelineno-0-748" name="intervention_grammar.approaches.Retain--source--__codelineno-0-748"></a><span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">member</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">note</span><span class="o">=</span><span class="s2">"retained, to be monitored"</span><span class="p">):</span>
+<a id="intervention_grammar.approaches.Retain--source--__codelineno-0-749" name="intervention_grammar.approaches.Retain--source--__codelineno-0-749"></a>    <span class="nb">super</span><span class="p">(</span><span class="n">Retain</span><span class="p">,</span> <span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+<a id="intervention_grammar.approaches.Retain--source--__codelineno-0-750" name="intervention_grammar.approaches.Retain--source--__codelineno-0-750"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">member</span> <span class="o">=</span> <span class="n">member</span>
+<a id="intervention_grammar.approaches.Retain--source--__codelineno-0-751" name="intervention_grammar.approaches.Retain--source--__codelineno-0-751"></a>    <span class="bp">self</span><span class="o">.</span><span class="n">note</span> <span class="o">=</span> <span class="n">note</span>
 </code></pre></div></td></tr></table></div>
                   </details>
 
