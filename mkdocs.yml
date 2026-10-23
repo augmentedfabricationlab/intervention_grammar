@@ -1,0 +1,144 @@
+site_name: Intervention Grammar
+site_url: https://augmentedfabricationlab.github.io/intervention_grammar/
+site_description: A grammar of interventions in existing structures.
+site_author: Tizian Rein
+
+repo_name: augmentedfabricationlab/intervention_grammar
+repo_url: https://github.com/augmentedfabricationlab/intervention_grammar/
+edit_uri: ""
+
+copyright: Copyright &copy; 2026, Augmented Fabrication Lab, Technical University of Munich
+
+exclude_docs: |
+  *.py
+
+extra:
+  generator: false
+  homepage: https://augmentedfabricationlab.github.io/intervention_grammar/
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/augmentedfabricationlab/intervention_grammar
+      name: intervention_grammar on GitHub
+    - icon: material/web
+      link: https://www.arc.ed.tum.de/df
+      name: Professorship of Digital Fabrication, TUM
+  version:
+    provider: mike
+
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    - scheme: slate
+      primary: custom
+      accent: custom
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  font:
+    text: Roboto
+    code: Roboto Mono
+  icon:
+    logo: material/graph-outline
+    repo: fontawesome/brands/github
+  favicon: _images/favicon.svg
+  features:
+    - content.code.copy
+    - navigation.footer
+    - navigation.indexes
+    - navigation.sections
+    - navigation.top
+    - search.highlight
+    - search.suggest
+    - toc.follow
+
+extra_css:
+  - assets/stylesheets/custom.css
+
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - footnotes
+  - md_in_html
+  - tables
+  - pymdownx.details
+  - pymdownx.highlight:
+      anchor_linenums: true
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets:
+      check_paths: true
+  - pymdownx.superfences
+  - toc:
+      permalink: "¤"
+      toc_depth: 3
+
+plugins:
+  - search
+  - mkdocstrings:
+      default_handler: python
+      handlers:
+        python:
+          paths: [src]
+          inventories:
+            - https://docs.python.org/3/objects.inv
+            - https://compas.dev/compas/latest/objects.inv
+          options:
+            extensions:
+              - docs/sphinx_roles.py
+            docstring_style: numpy
+            docstring_section_style: list
+            docstring_options:
+              ignore_init_summary: true
+              trim_doctest_flags: true
+            filters: public
+            group_by_category: true
+            heading_level: 2
+            members_order: source
+            merge_init_into_class: true
+            separate_signature: true
+            show_bases: true
+            show_category_heading: true
+            show_docstring_modules: true
+            show_if_no_docstring: false
+            show_root_full_path: true
+            show_root_heading: true
+            show_signature: true
+            show_source: true
+            show_submodules: false
+            show_symbol_type_heading: true
+            show_symbol_type_toc: true
+            signature_crossrefs: true
+            summary:
+              classes: true
+              functions: true
+
+nav:
+  - Home: index.md
+  - Installation: installation.md
+  - Concepts: concepts.md
+  - Operators: operators.md
+  - Approaches: approaches.md
+  - Examples: examples.md
+  - API Reference:
+      - state: api/intervention_grammar.state.md
+      - operation: api/intervention_grammar.operation.md
+      - structure_operators: api/intervention_grammar.structure_operators.md
+      - joint_operators: api/intervention_grammar.joint_operators.md
+      - process_operators: api/intervention_grammar.process_operators.md
+      - knowledge_operators: api/intervention_grammar.knowledge_operators.md
+      - approaches: api/intervention_grammar.approaches.md
+      - measures: api/intervention_grammar.measures.md
+      - demo: api/intervention_grammar.demo.md
+  - Citing: citing.md
+  - License: license.md
+  - Links:
+      - COMPAS: https://compas.dev/
+      - compas_model: https://blockresearchgroup.github.io/compas_model/
+      - Graph Drawing: https://augmentedfabricationlab.github.io/graph_drawing/
