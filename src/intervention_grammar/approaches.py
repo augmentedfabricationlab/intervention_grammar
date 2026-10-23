@@ -100,6 +100,21 @@ def _support(model, member, other, new):
     return [new if m == member else m for m in support]
 
 
+def _splice_support(model, member, zone, new):
+    """The support direction of the joint between a member and a new piece at its end.
+
+    Where the replaced end rested on a neighbour, the member now rests on the
+    new piece; where the end carried a neighbour, the new piece hangs from the
+    member.
+    """
+    supports = [connection_attribute(model, member, o, "support") for o in zone]
+    if any(isinstance(s, (list, tuple)) and s[0] == member for s in supports):
+        return [member, new]
+    if any(isinstance(s, (list, tuple)) and s[1] == member for s in supports):
+        return [new, member]
+    return None
+
+
 def _length(model, member):
     length = attribute(model, member, "length")
     if length is None:
@@ -161,7 +176,8 @@ class Prosthesis(Approach):
     Prosthesis = Release(connections in the zone) ; Split(m, s, J) ; Remove(old end) ;
     Add(piece) ; Insert(piece) ; Seat ; Join(J) ; Join(connections of the zone) ;
     Secure. The rest of the member keeps its name; the old end becomes
-    ``member.old`` and the new piece ``member.new``.
+    ``member.old`` and the new piece ``member.new``. Where the old end rested on
+    a neighbour, the member now rests on the new piece.
 
     Parameters
     ----------
@@ -220,7 +236,7 @@ class Prosthesis(Approach):
             Add(new, placed=False, attributes=values),
             Insert(new, self.path),
             Seat(new),
-            Join(new, m, self.joint, at=splice),
+            Join(new, m, self.joint, at=splice, support=_splice_support(model, m, zone, new)),
         ]
         for o in zone:
             s = stations[o]
@@ -736,7 +752,7 @@ class Lowering(Approach):
 
 
 class Retain(Approach):
-    """Leave the structure as it is and record why: the baseline every other approach is compared with.
+    """Leave the structure as it is and record why.
 
     Parameters
     ----------

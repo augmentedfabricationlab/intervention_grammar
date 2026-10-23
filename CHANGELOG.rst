@@ -4,6 +4,8 @@ Changelog
 x.x.x
 -------
 
+* Prosthesis: the member rests on the new piece where its old end rested on a neighbour.
+
 
 0.1.0
 -------

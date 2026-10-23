@@ -470,7 +470,7 @@ class Machine(Operation):
 
 
 class Fill(Operation):
-    """Fill a machined end with new material: the shape comes back, the original material does not.
+    """Fill a machined end with new material, so the end has its shape again.
 
     Inverse: :class:`Machine`.
 

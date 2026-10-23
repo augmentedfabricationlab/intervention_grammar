@@ -35,7 +35,7 @@ The approach expands into the operators it is made of:
  5  Add(member='post_3.new', placed=False, attributes={'type': 'post', 'length': 0.4, 'grounded': False})
  6  Insert(member='post_3.new', path='straight')
  7  Seat(member='post_3.new')
- 8  Join(a='post_3.new', b='post_3', joint={'family': 'lap', 'length': 0.3}, state='open', at={'post_3.new': 0.4, 'post_3': 0})
+ 8  Join(a='post_3.new', b='post_3', joint={'family': 'lap', 'length': 0.3}, state='open', at={'post_3.new': 0.4, 'post_3': 0}, support=['post_3', 'post_3.new'])
  9  Join(a='post_3.new', b='sill', joint={'family': 'tenon'}, state='open', at={'sill': 2.9, 'post_3.new': 0}, support=['post_3.new', 'sill'])
 10  Secure(a='post_3.new', b='post_3')
 11  Secure(a='post_3.new', b='sill')
@@ -66,8 +66,8 @@ Secure(a='post_3', b='sill')
 ```
 
 The inverse brings the structure back to its shape. The old foot returns as
-the element it was, with its condition and findings; the probe has no inverse,
-since what was learned stays known.
+the element it was, with its condition and findings. The probe has no
+inverse.
 
 ## When an operation does not fit
 
@@ -104,12 +104,22 @@ program = compas.json_load("program.json")
 [graph_drawing](https://augmentedfabricationlab.github.io/graph_drawing/)
 draws a model with its state as a graph: members as boxes coloured by type,
 arrows from the carried member to the carrying one, rings for damaged and new
-members. The drawings on the [home page](index.md) are made with it:
+members. Placing every member where it is in the wall keeps the drawing
+readable, as on the [home page](index.md):
 
 ```python
 from graph_drawing import models
 
-drawing = models.drawing(states[-1], title="after the prosthesis")
+# the middle of every member in the wall, in metres
+where = {
+    "sill": (1.5, 0.0), "plate": (1.5, 2.2),
+    "post_1": (0.1, 1.1), "post_2": (1.5, 1.1), "post_3": (2.9, 1.3), "post_3.new": (2.9, 0.2),
+    "rail_1": (0.8, 1.1), "rail_2": (2.2, 1.1),
+    "brace_1": (0.4, 1.9), "brace_2": (2.2, 1.65),
+}
+positions = {name: (2.2 * x, 2.2 * y) for name, (x, y) in where.items()}
+
+drawing = models.drawing(states[-1], positions=positions)
 with open("after.svg", "w") as f:
     f.write(drawing.to_svg())
 drawing.to_pdf("after.pdf")

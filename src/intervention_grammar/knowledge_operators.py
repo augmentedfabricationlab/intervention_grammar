@@ -1,9 +1,8 @@
 """
 Knowledge operators change what is known about a structure.
 
-Record and Probe leave the structure as it is and have no inverse: what has been
-learnt stays known. OpenUp also changes the building, since a covering comes
-off, so it has an inverse, Close.
+Record and Probe leave the structure as it is and have no inverse. OpenUp
+removes a covering, so it has an inverse, Close.
 """
 
 from __future__ import absolute_import

@@ -19,15 +19,15 @@ Intervention Grammar
 **A grammar of interventions in existing structures.** A structure is a set of
 members and their connections; operators change it, and approaches compose
 operators into interventions: repairs, reinforcements, additions and
-alterations. A program of operations runs on a model step by step, and every
-step can be undone.
+alterations. A program of operations runs on a model step by step, and its
+inverse undoes it.
 
 
 Main features
 -------------
 
 * Operators in four layers: structure, joint, process and knowledge
-* Approaches composed of operators, from a patch or a prosthesis to the collapse of a bay
+* Fourteen approaches composed of operators, for example Patch, Prosthesis, Replacement and Reinforcement
 * ``run`` gives every state of a program and a log of its steps, ``inverse`` the program that undoes it
 * Every operation is a COMPAS ``Data`` class and saves and loads as JSON
 * The structure is a `compas_model <https://github.com/blockresearchgroup/compas_model>`_ ``Model``,
@@ -76,8 +76,6 @@ Installation
 
   ``invoke add-to-rhino`` does the same from the repository folder.
 
-**You're ready to start working!**
-
 
 Example
 -------
@@ -117,15 +115,13 @@ Make sure you setup your local development environment correctly:
     pip install -r requirements-dev.txt
     invoke add-to-rhino
 
-**You're ready to start working!**
-
 During development, use tasks on the
 command line to ease recurring operations:
 
 * ``invoke clean``: Clean all generated artifacts.
 * ``invoke check``: Run various code and documentation style checks.
 * ``invoke docs``: Generate documentation.
-* ``invoke test``: Run all tests and checks in one swift command.
+* ``invoke test``: Run all tests and checks.
 * ``invoke add-to-rhino``: Make the project accessible from Rhino.
 * ``invoke``: Show available tasks.
 

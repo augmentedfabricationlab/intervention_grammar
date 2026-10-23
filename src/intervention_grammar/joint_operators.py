@@ -3,8 +3,8 @@ Joint operators change the shape of a connection.
 
 A joint is a family and its parameters, kept as a plain dict on the
 connection, for example ``{"family": "lap", "length": 0.3, "tilt": 6.0}``.
-The grammar does not interpret families; any source can provide such dicts. Topological operators (AddFeature, Fasten,
-Detach, Open) change which faces, pieces and contacts a joint has; parametric
+The grammar stores families and leaves their meaning to other tools.
+Topological operators (AddFeature, Fasten, Detach, Open) change which faces, pieces and contacts a joint has; parametric
 operators (Orient, Tilt, Lengthen, Shorten, Mirror) change its dimensions and
 angles.
 """

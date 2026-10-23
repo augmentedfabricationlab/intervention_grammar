@@ -10,7 +10,7 @@ compas_timber TimberModel.
 Every operation changes the model only through the functions below. They are
 the six basic edits (add or remove an element, add or remove a connection, set
 an attribute on either) plus the lookups they need. Moving the grammar to
-another kind of model means translating this module and nothing else.
+another kind of model means translating this module.
 
 Element attributes
     fabric      "original" or "new"

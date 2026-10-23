@@ -6,8 +6,7 @@ intervention_grammar
 A grammar of interventions in existing structures: primitive operators in four layers, and approaches
 composed of them, acting on a structure of members and their connections.
 
-The operators describe what is done to the building, independent of who does
-it: a person, a robot or a program carry out the same operation.
+The operators describe what is done to a structure, whoever carries it out.
 
 
 Main concepts

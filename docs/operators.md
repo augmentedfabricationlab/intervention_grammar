@@ -48,7 +48,7 @@ The share of original material that remains is measured with
 The shape of a connection. Joints are plain dicts, a family name and its
 parameters, for example `{"family": "lap", "length": 0.3}`. The grammar
 stores and changes them and leaves the meaning of a family to the tools that
-make or check the joint, so joints can come from any source.
+make or check the joint.
 
 | Operator | Parameters | What it does | Inverse |
 |---|---|---|---|
@@ -82,7 +82,7 @@ members taken out and put back, the structure lifted and propped.
 | [`Prop`][intervention_grammar.process_operators.Prop] | `member, at` | Put a temporary prop under a member. | [`Unprop`][intervention_grammar.process_operators.Unprop] |
 | [`Unprop`][intervention_grammar.process_operators.Unprop] | `member, at` | Take a temporary prop away. | [`Prop`][intervention_grammar.process_operators.Prop] |
 | [`Machine`][intervention_grammar.process_operators.Machine] | `member, end, joint` | Cut a joint into the end of a member. | [`Fill`][intervention_grammar.process_operators.Fill] |
-| [`Fill`][intervention_grammar.process_operators.Fill] | `member, end` | Fill a machined end with new material: the shape comes back, the original material does not. | [`Machine`][intervention_grammar.process_operators.Machine] |
+| [`Fill`][intervention_grammar.process_operators.Fill] | `member, end` | Fill a machined end with new material, so the end has its shape again. | [`Machine`][intervention_grammar.process_operators.Machine] |
 
 ## Knowledge
 

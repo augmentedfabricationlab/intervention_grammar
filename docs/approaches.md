@@ -3,8 +3,7 @@
 An approach is an operation made of other operations. When a program runs,
 each approach is expanded into its operators for the model as it is at that
 moment, and each operator is checked and applied in turn. The log lists the
-operators, so a program of approaches and its expansion can always be
-compared.
+operators.
 
 | Approach | Parameters | What it does | Steps |
 |---|---|---|---|
@@ -21,14 +20,13 @@ compared.
 | [`Collapse`][intervention_grammar.approaches.Collapse] | `remove, ring, rest, by, joint` | Remove a bay and close the structure up (an edge ring collapse). | Remove the members of a bay ; Split and Remove the bay segments ; Move the rest ; Join ; Secure |
 | [`Bypass`][intervention_grammar.approaches.Bypass] | `member, through, to, end, by, at` | Remove a member and let a neighbour that ended on it continue to the next member. | Extend ; Reroute ; Remove ; Secure |
 | [`Lowering`][intervention_grammar.approaches.Lowering] | `standing, base, above, by` | Shorten the members standing on a base, replace the base and lower everything above onto it. | Prop ; Remove the base ; Trim the standing members ; new base in ; Move down ; Join ; Secure ; Unprop |
-| [`Retain`][intervention_grammar.approaches.Retain] | `member, note` | Leave the structure as it is and record why: the baseline every other approach is compared with. | Record |
+| [`Retain`][intervention_grammar.approaches.Retain] | `member, note` | Leave the structure as it is and record why. | Record |
 
 Where an approach needs the connections in a zone of a member, it reads their
 stations, or takes them from its `zone` parameter.
 
 [`Retain`][intervention_grammar.approaches.Retain] changes nothing and records
-why. It is the baseline every other approach is compared with, the minimum
-intervention.
+why. The other approaches can be compared with it.
 
 ## Writing an approach
 

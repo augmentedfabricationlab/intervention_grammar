@@ -91,6 +91,8 @@ def test_prosthesis_steps():
     assert sorted(st.neighbours(m, "post_3.new")) == ["post_3", "sill"]
     assert st.connection_attribute(m, "post_3.new", "sill", "state") == "secured"
     assert st.connection_attribute(m, "post_3.new", "sill", "at") == {"post_3.new": 0.0, "sill": 2.9}
+    assert st.connection_attribute(m, "post_3.new", "sill", "support") == ["post_3.new", "sill"]
+    assert st.connection_attribute(m, "post_3.new", "post_3", "support") == ["post_3", "post_3.new"]
     assert original_share(m) == pytest.approx(1.0 - 0.4 / sum(st.attribute(m, n, "length") for n in st.names(m)))
 
 
@@ -107,6 +109,7 @@ def test_prosthesis_at_the_end_keeps_the_start():
     assert sorted(st.neighbours(m, "plate.new")) == ["plate", "post_3"]
     assert st.connection_attribute(m, "plate.new", "post_3", "at")["plate.new"] == pytest.approx(0.4)
     assert st.attribute(m, "plate", "length") == pytest.approx(2.5)
+    assert st.connection_attribute(m, "plate.new", "plate", "support") == ["plate", "plate.new"]
 
 
 def test_mid_prosthesis_pieces():

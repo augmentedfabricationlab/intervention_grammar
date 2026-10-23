@@ -54,7 +54,7 @@ Every operator is a COMPAS `Data` class with three methods:
   before it was applied.
 
 An operation saves and loads with `compas.json_dump` and `compas.json_load`,
-so a program can be written, stored and exchanged as JSON.
+so a program can be stored as JSON.
 
 ## Approach
 
