@@ -6,7 +6,6 @@ from intervention_grammar import Bypass
 from intervention_grammar import Collapse
 from intervention_grammar import InterventionError
 from intervention_grammar import Lowering
-from intervention_grammar import MidProsthesis
 from intervention_grammar import Patch
 from intervention_grammar import Probe
 from intervention_grammar import Prosthesis
@@ -32,9 +31,9 @@ WALL = ["post_1", "post_2", "post_3", "rail_1", "rail_2", "plate", "brace_1", "b
 # every approach, on the demo wall
 CASES = {
     "patch": Patch("sill", {"span": [1.8, 2.0], "face": "top", "depth": 0.03}),
-    "prosthesis": Prosthesis("post_3", 0.4),
-    "prosthesis at the end": Prosthesis("plate", 0.5, end="end"),
-    "mid prosthesis": MidProsthesis("sill", [0.6, 1.2]),
+    "prosthesis": Prosthesis("post_3", [0, 0.4]),
+    "prosthesis at the end": Prosthesis("plate", [2.5, 3.0]),
+    "prosthesis in the middle": Prosthesis("sill", [0.6, 1.2]),
     "replacement": Replacement("rail_2"),
     "reinforcement": Reinforcement("rail_1", span=[0.2, 1.2]),
     "addition": Addition("brace_3", {"post_3": 1.6, "plate": 2.3}, length=0.85),
@@ -80,7 +79,7 @@ def test_approach_survives_json(name):
 
 
 def test_prosthesis_steps():
-    states = run(demo.wall(), [Probe("post_3", 0.1, "damaged"), Prosthesis("post_3", 0.4)])
+    states = run(demo.wall(), [Probe("post_3", 0.1, "damaged"), Prosthesis("post_3", [0, 0.4])])
     m = states[-1]
     steps = [e["operation"] for e in m.graph.attributes["log"]]
     assert steps == ["Probe", "Release", "Split", "Remove", "Add", "Insert", "Seat", "Join", "Join", "Secure", "Secure"]
@@ -97,24 +96,24 @@ def test_prosthesis_steps():
 
 
 def test_prosthesis_leaves_the_damage_with_the_old_end():
-    m = run(demo.wall(), [Probe("post_3", 0.1, "damaged"), Probe("post_3", 1.5, "sound"), Prosthesis("post_3", 0.4)])[-1]
+    m = run(demo.wall(), [Probe("post_3", 0.1, "damaged"), Probe("post_3", 1.5, "sound"), Prosthesis("post_3", [0, 0.4])])[-1]
     assert st.attribute(m, "post_3", "condition") == "sound"
     assert st.attribute(m, "post_3", "findings") == [{"at": pytest.approx(1.1), "finding": "sound"}]
-    m = run(demo.wall(), [Probe("post_3", None, "damaged"), Prosthesis("post_3", 0.4)])[-1]
+    m = run(demo.wall(), [Probe("post_3", None, "damaged"), Prosthesis("post_3", [0, 0.4])])[-1]
     assert st.attribute(m, "post_3", "condition") == "damaged"  # where the damage sits is not known
 
 
 def test_prosthesis_at_the_end_keeps_the_start():
-    m = run(demo.wall(), [Prosthesis("plate", 0.5, end="end")])[-1]
+    m = run(demo.wall(), [Prosthesis("plate", [2.5, 3.0])])[-1]
     assert sorted(st.neighbours(m, "plate.new")) == ["plate", "post_3"]
     assert st.connection_attribute(m, "plate.new", "post_3", "at")["plate.new"] == pytest.approx(0.4)
     assert st.attribute(m, "plate", "length") == pytest.approx(2.5)
     assert st.connection_attribute(m, "plate.new", "plate", "support") == ["plate", "plate.new"]
 
 
-def test_mid_prosthesis_pieces():
-    m = run(demo.wall(), [MidProsthesis("sill", [0.6, 1.2])])[-1]
-    assert sorted(st.neighbours(m, "sill.a")) == ["post_1", "sill.new"]
+def test_prosthesis_in_the_middle():
+    m = run(demo.wall(), [Prosthesis("sill", [0.6, 1.2])])[-1]
+    assert sorted(st.neighbours(m, "sill")) == ["post_1", "sill.new"]
     assert sorted(st.neighbours(m, "sill.b")) == ["post_2", "post_3", "sill.new"]
     assert st.attribute(m, "sill.new", "length") == pytest.approx(0.6)
 
@@ -160,8 +159,9 @@ def test_touched_and_retain():
 
 def test_approach_failure_names_the_step():
     with pytest.raises(InterventionError) as e:
-        run(demo.wall(), [Prosthesis("post_3", 2.5)])
-    assert "cannot be split" in str(e.value)
+        run(demo.wall(), [Probe("post_3", 0.1, "damaged"), Prosthesis("post_3", [0, 2.5])])
+    assert str(e.value).startswith("step 2, Prosthesis(")
+    assert "covers all of post_3" in str(e.value)
 
 
 def test_nested_sequence_expands():

@@ -47,7 +47,6 @@ from .structure_operators import Turn
 __all__ = [
     "Patch",
     "Prosthesis",
-    "MidProsthesis",
     "Replacement",
     "Reinforcement",
     "Addition",
@@ -171,139 +170,122 @@ class Patch(Approach):
 
 
 class Prosthesis(Approach):
-    """Replace a member over its full section along a length at one end.
+    """Replace a member over its full section along a span.
 
-    Prosthesis = Release(connections in the zone) ; Split(m, s, J) ; Remove(old end) ;
-    Add(piece) ; Insert(piece) ; Seat ; Join(J) ; Join(connections of the zone) ;
-    Secure. The rest of the member keeps its name; the old end becomes
-    ``member.old`` and the new piece ``member.new``. Where the old end rested on
-    a neighbour, the member now rests on the new piece.
+    Where the span reaches an end of the member, the new piece is joined to the
+    rest of the member at one cut; where it lies in the middle, at two cuts.
+
+    Prosthesis = Release(connections in the span) ; Split ; Remove(old piece) ;
+    Add(new piece) ; Insert ; Seat ; Join(rest of the member) ;
+    Join(connections in the span) ; Secure. In the middle, the member is split
+    twice and the new piece is joined to both parts.
+
+    The rest of the member keeps its name; in the middle, the part after the
+    span becomes ``member.b``. The old piece becomes ``member.old``, the new one
+    ``member.new``. Where the old piece rested on a neighbour, the member now
+    rests on the new piece.
 
     Parameters
     ----------
     member : str
-        The member whose end is replaced.
-    length : float
-        How far the new piece reaches, measured from the end.
-    end : str, optional
-        "start" (default) or "end".
-    joint : dict, optional
-        The joint between the remaining member and the new piece.
+        The member to repair.
+    span : list[float]
+        Stations of the start and the end of the replaced piece, in metres from
+        the start of the member.
+    joint : dict | list[dict], optional
+        The joint at the cuts, or one joint per cut: [at the start of the span,
+        at its end].
     zone : list[str], optional
-        Neighbours connected within the replaced length, where stations are not known.
+        Neighbours connected within the span, where stations are not known.
     path : str, optional
-        How the new piece is brought in.
+        How the new piece is brought in, see :class:`Insert`. Default "straight".
 
     """
 
-    def __init__(self, member, length, end="start", joint=None, zone=None, path="straight"):
+    def __init__(self, member, span, joint=None, zone=None, path="straight"):
         super(Prosthesis, self).__init__()
         self.member = member
-        self.length = length
-        self.end = end
+        self.span = list(span)
         self.joint = joint
         self.zone = list(zone) if zone else None
         self.path = path
 
     @property
     def __data__(self):
-        return {"member": self.member, "length": self.length, "end": self.end, "joint": self.joint,
-                "zone": self.zone, "path": self.path}
+        return {"member": self.member, "span": self.span, "joint": self.joint, "zone": self.zone, "path": self.path}
 
     def operations(self, model):
         m = self.member
         element(model, m)
+        s0, s1 = self.span
+        total = attribute(model, m, "length")
+        joints = list(self.joint) if isinstance(self.joint, (list, tuple)) else [self.joint, self.joint]
+        at_start = s0 <= 1e-9
+        at_end = total is not None and s1 >= total - 1e-9
+        if at_start and at_end:
+            raise InterventionError("the span covers all of {}; this is a Replacement".format(m))
+        if at_start:
+            return self._end(model, "start", s1, joints[1])
+        if at_end:
+            return self._end(model, "end", round(total - s0, 9), joints[0])
+        return self._middle(model, s0, s1, joints)
+
+    def _end(self, model, end, length, joint):
+        m = self.member
         old, new = m + ".old", m + ".new"
-        if self.end == "start":
-            at = self.length
+        if end == "start":
+            at = length
             zone = _zone(model, m, 0.0, at, self.zone)
             pieces = [old, m]
         else:
             total = _length(model, m)
-            at = total - self.length
+            at = total - length
             zone = _zone(model, m, at, total, self.zone)
             pieces = [m, old]
-        start = zone if self.end == "start" else [o for o in neighbours(model, m) if o not in zone]
+        start = zone if end == "start" else [o for o in neighbours(model, m) if o not in zone]
         links = {o: connection_attribute(model, m, o, "joint") for o in zone}
         stations = {o: connection_attribute(model, m, o, "at") for o in zone}
         values = _new(m, model)
-        values["length"] = self.length
-        splice = {new: self.length, m: 0.0} if self.end == "start" else {m: at, new: 0.0}
+        values["length"] = length
+        splice = {new: length, m: 0.0} if end == "start" else {m: at, new: 0.0}
         ops = _releases(model, m, zone)
         ops += [
-            Split(m, at, self.joint, pieces=pieces, start=start if self.zone else None),
+            Split(m, at, joint, pieces=pieces, start=start if self.zone else None),
             Remove(old),
             Add(new, placed=False, attributes=values),
             Insert(new, self.path),
             Seat(new),
-            Join(new, m, self.joint, at=splice, support=_splice_support(model, m, zone, new)),
+            Join(new, m, joint, at=splice, support=_splice_support(model, m, zone, new)),
         ]
         for o in zone:
             s = stations[o]
             at_new = {o: s[o]} if o in s else {}
             if m in s:
-                at_new[new] = s[m] if self.end == "start" else round(s[m] - at, 9)
+                at_new[new] = s[m] if end == "start" else round(s[m] - at, 9)
             ops.append(Join(new, o, links[o], at=at_new, support=_support(model, m, o, new)))
         ops += [Secure(new, m)] + [Secure(new, o) for o in zone]
         return ops
 
-
-class MidProsthesis(Approach):
-    """Replace a member over its full section along a length in its middle.
-
-    MidProsthesis = Release ; Split(m, s1) ; Split(m, s0) ; Remove(segment) ;
-    Add ; Insert ; Seat ; Join(J0) ; Join(J1) ; Join(connections of the segment) ;
-    Secure. The two remaining pieces are ``member.a`` and ``member.b``.
-
-    Parameters
-    ----------
-    member : str
-        The member whose middle segment is replaced.
-    span : list[float]
-        Stations s0 and s1 of the replaced segment.
-    joints : list[dict], optional
-        The joints at s0 and at s1.
-    zone : list[str], optional
-        Neighbours connected within the segment, where stations are not known.
-    path : str, optional
-        How the new segment is brought in, see :class:`Insert`. Default "straight".
-
-    """
-
-    def __init__(self, member, span, joints=None, zone=None, path="straight"):
-        super(MidProsthesis, self).__init__()
-        self.member = member
-        self.span = list(span)
-        self.joints = list(joints) if joints else [None, None]
-        self.zone = list(zone) if zone else None
-        self.path = path
-
-    @property
-    def __data__(self):
-        return {"member": self.member, "span": self.span, "joints": self.joints, "zone": self.zone, "path": self.path}
-
-    def operations(self, model):
+    def _middle(self, model, s0, s1, joints):
         m = self.member
-        s0, s1 = self.span
-        a, b, old, new = m + ".a", m + ".b", m + ".old", m + ".new"
+        b, old, new = m + ".b", m + ".old", m + ".new"
         zone = _zone(model, m, s0, s1, self.zone)
         links = {o: connection_attribute(model, m, o, "joint") for o in zone}
         stations = {o: connection_attribute(model, m, o, "at") for o in zone}
         values = _new(m, model)
         values["length"] = round(s1 - s0, 9)
-        right = [o for o in neighbours(model, m) if (connection_attribute(model, m, o, "at").get(m) or 0.0) > s1]
+        after = [o for o in neighbours(model, m) if (connection_attribute(model, m, o, "at").get(m) or 0.0) > s1]
+        before = [o for o in neighbours(model, m) if o not in after]
         ops = _releases(model, m, zone)
         ops += [
-            Split(m, s1, self.joints[1], pieces=[m + ".rest", b],
-                  start=None if self.zone is None else [o for o in neighbours(model, m) if o not in right]),
-            Split(m + ".rest", s0, self.joints[0], pieces=[a, old],
-                  start=None if self.zone is None else [o for o in neighbours(model, m) if o not in zone and o not in right]),
+            Split(m, s1, joints[1], pieces=[m, b], start=None if self.zone is None else before),
+            Split(m, s0, joints[0], pieces=[m, old], start=None if self.zone is None else [o for o in before if o not in zone]),
             Remove(old),
             Add(new, placed=False, attributes=values),
             Insert(new, self.path),
             Seat(new),
-            Join(a, new, self.joints[0], at={a: s0, new: 0.0}),
-            Join(new, b, self.joints[1], at={new: round(s1 - s0, 9), b: 0.0}),
+            Join(m, new, joints[0], at={m: s0, new: 0.0}),
+            Join(new, b, joints[1], at={new: round(s1 - s0, 9), b: 0.0}),
         ]
         for o in zone:
             s = stations[o]
@@ -311,7 +293,7 @@ class MidProsthesis(Approach):
             if m in s:
                 at_new[new] = round(s[m] - s0, 9)
             ops.append(Join(new, o, links[o], at=at_new, support=_support(model, m, o, new)))
-        ops += [Secure(a, new), Secure(new, b)] + [Secure(new, o) for o in zone]
+        ops += [Secure(m, new), Secure(new, b)] + [Secure(new, o) for o in zone]
         return ops
 
 

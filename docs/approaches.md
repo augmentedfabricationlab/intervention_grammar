@@ -8,8 +8,7 @@ operators.
 | Approach | Parameters | What it does | Steps |
 |---|---|---|---|
 | [`Patch`][intervention_grammar.approaches.Patch] | `member, region, piece, joint` | Cut damaged material out of part of a member and fit a new piece. | Cut ; Inlay ; Secure |
-| [`Prosthesis`][intervention_grammar.approaches.Prosthesis] | `member, length, end, joint, zone, path` | Replace a member over its full section along a length at one end. | Release ; Split ; Remove the old end ; Add ; Insert ; Seat ; Join ; Secure |
-| [`MidProsthesis`][intervention_grammar.approaches.MidProsthesis] | `member, span, joints, zone, path` | Replace a member over its full section along a length in its middle. | as Prosthesis, with two joints |
+| [`Prosthesis`][intervention_grammar.approaches.Prosthesis] | `member, span, joint, zone, path` | Replace a member over its full section along a span, at an end or in the middle. | Release ; Split, in the middle twice ; Remove the old piece ; Add ; Insert ; Seat ; Join ; Secure |
 | [`Replacement`][intervention_grammar.approaches.Replacement] | `member, new, path` | Replace a whole member. | Release ; Withdraw ; Remove ; Add ; Insert ; Seat ; Join ; Secure |
 | [`Reinforcement`][intervention_grammar.approaches.Reinforcement] | `member, piece, face, span, joint` | Add a piece alongside a member and fasten the two together; the piece shares the member's load path. | Double ; Secure |
 | [`Addition`][intervention_grammar.approaches.Addition] | `member, between, type, joint, length` | Introduce a new member that takes part of the load; the damage stays. | Cut ; Add ; Secure |

@@ -30,8 +30,8 @@ basic edits defined there.
 * knowledge: Record, Probe, OpenUp, Close
 
 **Approach.** An operation made of other operations: Patch, Prosthesis,
-MidProsthesis, Replacement, Reinforcement, Addition, Reconnection,
-Realignment, Subtraction, Repositioning, Collapse, Bypass, Lowering, Retain.
+Replacement, Reinforcement, Addition, Reconnection, Realignment, Subtraction,
+Repositioning, Collapse, Bypass, Lowering, Retain.
 
 **Program.** A plain list of operations and approaches. :func:`run` applies
 it to a copy of a model and returns every state, with the log of all steps;
@@ -41,7 +41,7 @@ Example
 -------
 >>> from intervention_grammar import demo, run, Prosthesis, Probe
 >>> wall = demo.wall()
->>> states = run(wall, [Probe("post_3", at=0.1, finding="damaged"), Prosthesis("post_3", length=0.4, joint={"family": "lap"})])
+>>> states = run(wall, [Probe("post_3", at=0.1, finding="damaged"), Prosthesis("post_3", span=[0, 0.4], joint={"family": "lap"})])
 >>> len(states)
 12
 >>> states[-1].graph.attributes["log"][2]["text"]
@@ -67,7 +67,6 @@ from .approaches import Addition
 from .approaches import Bypass
 from .approaches import Collapse
 from .approaches import Lowering
-from .approaches import MidProsthesis
 from .approaches import Patch
 from .approaches import Prosthesis
 from .approaches import Realignment
@@ -189,7 +188,6 @@ __all__ = [
     "Close",
     "Patch",
     "Prosthesis",
-    "MidProsthesis",
     "Replacement",
     "Reinforcement",
     "Addition",

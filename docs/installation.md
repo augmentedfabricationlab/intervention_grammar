@@ -41,7 +41,7 @@ compas_model has to be installed in Rhino's Python in that case.
 `rhino/run_program.py` is the body of a Python 3 Script component in
 Grasshopper. It runs a program on a model and outputs every state, one chosen
 state, the log and the error. The program is a list of operation objects or
-of text such as `Prosthesis("post_3", length=0.4)`.
+of text such as `Prosthesis("post_3", span=[0, 0.4])`.
 
 ## Developer
 

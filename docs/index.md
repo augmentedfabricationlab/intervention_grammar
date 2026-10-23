@@ -44,7 +44,7 @@ from intervention_grammar import Probe, Prosthesis
 wall = demo.wall()
 program = [
     Probe("post_3", at=0.1, finding="damaged"),
-    Prosthesis("post_3", length=0.4, joint={"family": "lap", "length": 0.3}),
+    Prosthesis("post_3", span=[0, 0.4], joint={"family": "lap", "length": 0.3}),
 ]
 states = run(wall, program)    # every state, step by step
 undo = inverse(wall, program)  # the program that undoes it

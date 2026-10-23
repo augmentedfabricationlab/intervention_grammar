@@ -183,7 +183,10 @@ def steps(model, operations):
     while pending:
         op, parent = pending.pop(0)
         if isinstance(op, Approach):
-            pending[0:0] = [(sub, op) for sub in op.operations(current)]
+            try:
+                pending[0:0] = [(sub, op) for sub in op.operations(current)]
+            except InterventionError as error:
+                raise InterventionError("step {}, {!r}: {}".format(number + 1, op, error))
             continue
         number += 1
         after = current.copy()

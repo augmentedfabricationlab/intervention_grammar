@@ -27,7 +27,7 @@ Main features
 -------------
 
 * Operators in four layers: structure, joint, process and knowledge
-* Fourteen approaches composed of operators, for example Patch, Prosthesis, Replacement and Reinforcement
+* Thirteen approaches composed of operators, for example Patch, Prosthesis, Replacement and Reinforcement
 * ``run`` gives every state of a program and a log of its steps, ``inverse`` the program that undoes it
 * Every operation is a COMPAS ``Data`` class and saves and loads as JSON
 * The structure is a `compas_model <https://github.com/blockresearchgroup/compas_model>`_ ``Model``,
@@ -88,7 +88,7 @@ Example
     wall = demo.wall()
     program = [
         Probe("post_3", at=0.1, finding="damaged"),
-        Prosthesis("post_3", length=0.4, joint={"family": "lap", "length": 0.3}),
+        Prosthesis("post_3", span=[0, 0.4], joint={"family": "lap", "length": 0.3}),
     ]
     states = run(wall, program)
 

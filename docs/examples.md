@@ -17,7 +17,7 @@ from intervention_grammar import Probe, Prosthesis
 wall = demo.wall()
 program = [
     Probe("post_3", at=0.1, finding="damaged"),
-    Prosthesis("post_3", length=0.4, joint={"family": "lap", "length": 0.3}),
+    Prosthesis("post_3", span=[0, 0.4], joint={"family": "lap", "length": 0.3}),
 ]
 
 states = run(wall, program)
@@ -132,7 +132,7 @@ drawing.to_pdf("after.pdf")
 
 ```text
 Probe("post_3", at=0.1, finding="damaged")
-Prosthesis("post_3", length=0.4, joint={"family": "lap", "length": 0.3})
+Prosthesis("post_3", span=[0, 0.4], joint={"family": "lap", "length": 0.3})
 ```
 
 The outputs are every state, one chosen state, the log and the error.

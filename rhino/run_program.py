@@ -9,7 +9,7 @@ Inputs
     model     a compas_model Model; empty: the demo wall
     program   operations, either objects from another component or text, one
               operation per item, written as Python calls, for example
-              Prosthesis("post_3", length=0.4)
+              Prosthesis("post_3", span=[0, 0.4])
     step      the state to output; empty: the last one
 
 Outputs
